@@ -14,9 +14,9 @@ typedef struct node{
     char data;
     BTree lchild;
     BTree rchild;
-}TNode;//树的结构
-void CreateBTree(BTree &bt,string str);//创建二叉树 
-void  DispBTree(BTree bt);//括号法输出二叉树
+}TNode;
+void CreateBTree(BTree &bt,string str);
+void  DispBTree(BTree bt);
 void PreOrder( BTree bt );//先序遍历二叉树
 void InOrder(BTree bt);//中序遍历二叉树
 void PostOrder(BTree bt);//后序遍历二叉树 
