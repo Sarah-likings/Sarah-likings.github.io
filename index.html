@@ -230,6 +230,53 @@
                 </div>
             </div>
 
+            <!-- 技术笔记展示区 -->
+<section id="notes" class="mb-16">
+    <div class="text-center mb-10">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-pink-darker">技术笔记</h2>
+        <div class="w-20 h-1 bg-pink-medium mx-auto mt-3 rounded-full"></div>
+        <p class="mt-4 text-gray-600">记录学习过程中的技术要点、问题解决思路</p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md p-6 md:p-8">
+        <!-- 笔记列表（后续新增笔记时，只需在这里添加对应链接即可） -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- 笔记项1（示例：HTML基础笔记） -->
+            <a href="https://github.com/Sarah-likings/Sarah-likings.github.io/blob/main/notes/html基础笔记.md" target="_blank" class="p-4 border border-pink-light rounded-lg hover:bg-pink-light/30 transition-colors">
+                <div class="flex items-start">
+                    <i class="fa fa-sticky-note text-pink-dark text-xl mt-1 mr-3"></i>
+                    <div>
+                        <h4 class="font-medium text-pink-darker">HTML 基础笔记</h4>
+                        <p class="text-sm text-gray-600 mt-1">整理了HTML常用标签、语义化结构及常见问题</p>
+                        <p class="text-xs text-gray-500 mt-2">最后更新：2023-10-28</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 笔记项2（示例：JavaScript调试技巧） -->
+            <a href="https://github.com/Sarah-likings/Sarah-likings.github.io/blob/main/notes/js调试技巧.md" target="_blank" class="p-4 border border-pink-light rounded-lg hover:bg-pink-light/30 transition-colors">
+                <div class="flex items-start">
+                    <i class="fa fa-sticky-note text-pink-dark text-xl mt-1 mr-3"></i>
+                    <div>
+                        <h4 class="font-medium text-pink-darker">JavaScript 调试技巧</h4>
+                        <p class="text-sm text-gray-600 mt-1">console工具的高级用法及常见bug排查思路</p>
+                        <p class="text-xs text-gray-500 mt-2">最后更新：2023-10-27</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 后续新增笔记时，复制上面的结构修改内容即可 -->
+            <!-- <a href="笔记在仓库中的链接" target="_blank" class="...">...</a> -->
+        </div>
+
+        <!-- 新增笔记提示（方便你自己管理） -->
+        <div class="mt-6 p-3 bg-pink-light/50 rounded-lg text-sm text-gray-700">
+            <i class="fa fa-info-circle text-pink-dark mr-2"></i>
+            新增笔记步骤：① 在仓库创建 `notes` 文件夹 ② 上传 Markdown 笔记（如 `xxx.md`） ③ 在此处添加笔记链接
+        </div>
+    </div>
+</section>
+
             <!-- 查看更多按钮 -->
             <div class="text-center mt-10">
                 <a href="#" class="inline-block border-2 border-pink-dark text-pink-dark px-6 py-3 rounded-full font-medium hover:bg-pink-dark hover:text-white transition-colors">
