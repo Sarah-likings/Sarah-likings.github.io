@@ -1,32 +1,325 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarah's Blog</title>
-    <style>
-        body {
-            background-color: #f8d7da; /* 粉红色背景 */
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+    <title>莎拉的博客 | 学习与生活记录</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        // 配置粉色主题
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pink: {
+                            light: '#FFE6EA',
+                            DEFAULT: '#FFC2CD',
+                            medium: '#FF9DAF',
+                            dark: '#FF7A93',
+                            darker: '#FF5778'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
         }
-        .container {
-            text-align: center;
-        }
-        h1 {
-            color: #d9534f; /* 深粉红色文字 */
-            font-size: 2.5em;
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Welcome to Sarah's World!</h1>
-    </div>
+<body class="bg-pink-light min-h-screen font-sans text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 bg-white/90 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-pink-darker font-bold text-xl flex items-center">
+                <i class="fa fa-pencil-square-o mr-2"></i>莎拉的博客
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-pink-dark transition-colors">关于我</a>
+                <a href="#hobbies" class="text-gray-600 hover:text-pink-dark transition-colors">我的爱好</a>
+                <a href="#blog" class="text-gray-600 hover:text-pink-dark transition-colors">博客文章</a>
+                <a href="#contact" class="text-gray-600 hover:text-pink-dark transition-colors">联系方式</a>
+                <a href="https://github.com/Sarah-likings/Sarah-likings.github.io" target="_blank" class="bg-pink-dark text-white px-4 py-2 rounded-full hover:bg-pink-darker transition-colors">
+                    <i class="fa fa-github mr-1"></i>我的仓库
+                </a>
+            </div>
+            <button class="md:hidden text-pink-darker text-xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 头部横幅 -->
+    <header class="bg-gradient-to-r from-pink to-pink-medium py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-white mb-4 text-shadow">
+                记录学习的脚步，分享生活的美好
+            </h1>
+            <p class="text-white/90 text-[clamp(1rem,2vw,1.25rem)] max-w-2xl mx-auto">
+                这里是我记录技术学习、生活思考的小天地，欢迎你的到来
+            </p>
+            <div class="mt-8">
+                <a href="#blog" class="bg-white text-pink-darker px-6 py-3 rounded-full inline-block font-medium hover:shadow-lg transition-all">
+                    浏览博客 <i class="fa fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <!-- 关于我部分（预留内容区） -->
+        <section id="about" class="mb-16">
+            <div class="text-center mb-10">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-pink-darker">关于我</h2>
+                <div class="w-20 h-1 bg-pink-medium mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md p-6 md:p-8">
+                <!-- 自我接纳 -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-pink-darker mb-4">自我接纳</h3>
+                    <div class="border-l-4 border-pink-medium pl-4 py-2 text-gray-700">
+                        <!-- 此处可填写自我接纳相关内容 -->
+                        <p>（待补充：关于自我认知、接纳不完美、成长心态等内容）</p>
+                    </div>
+                </div>
+
+                <!-- 个人信息 -->
+                <div>
+                    <h3 class="text-xl font-semibold text-pink-darker mb-4">个人信息</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-center p-3 bg-pink-light/50 rounded-lg">
+                            <i class="fa fa-user-circle text-pink-medium mr-3 w-5 text-center"></i>
+                            <span>昵称：<span class="font-medium">莎拉</span></span>
+                        </div>
+                        <div class="flex items-center p-3 bg-pink-light/50 rounded-lg">
+                            <i class="fa fa-graduation-cap text-pink-medium mr-3 w-5 text-center"></i>
+                            <span>身份：<span class="font-medium">（待补充：如前端学习者/学生等）</span></span>
+                        </div>
+                        <div class="flex items-center p-3 bg-pink-light/50 rounded-lg">
+                            <i class="fa fa-code text-pink-medium mr-3 w-5 text-center"></i>
+                            <span>技能：<span class="font-medium">（待补充：如HTML、CSS、JavaScript等）</span></span>
+                        </div>
+                        <div class="flex items-center p-3 bg-pink-light/50 rounded-lg">
+                            <i class="fa fa-heart text-pink-medium mr-3 w-5 text-center"></i>
+                            <span>座右铭：<span class="font-medium">（待补充：个人信念或激励语）</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 爱好部分（预留内容区） -->
+        <section id="hobbies" class="mb-16">
+            <div class="text-center mb-10">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-pink-darker">我的爱好</h2>
+                <div class="w-20 h-1 bg-pink-medium mx-auto mt-3 rounded-full"></div>
+                <p class="mt-4 text-gray-600">除了学习技术，我还有这些热爱的事情</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 爱好卡片1（预留） -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-pink/30 flex items-center justify-center">
+                        <!-- 可替换为实际图片 -->
+                        <i class="fa fa-book text-5xl text-pink-dark/70"></i>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-book text-pink-dark text-xl mr-2"></i>
+                            <h3 class="text-lg font-semibold">（爱好名称1）</h3>
+                        </div>
+                        <p class="text-gray-600">（待补充：描述这个爱好的内容、为什么喜欢、带来的收获等）</p>
+                    </div>
+                </div>
+
+                <!-- 爱好卡片2（预留） -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-pink/30 flex items-center justify-center">
+                        <!-- 可替换为实际图片 -->
+                        <i class="fa fa-music text-5xl text-pink-dark/70"></i>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-music text-pink-dark text-xl mr-2"></i>
+                            <h3 class="text-lg font-semibold">（爱好名称2）</h3>
+                        </div>
+                        <p class="text-gray-600">（待补充：描述这个爱好的内容、为什么喜欢、带来的收获等）</p>
+                    </div>
+                </div>
+
+                <!-- 爱好卡片3（预留） -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-pink/30 flex items-center justify-center">
+                        <!-- 可替换为实际图片 -->
+                        <i class="fa fa-camera text-5xl text-pink-dark/70"></i>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-camera text-pink-dark text-xl mr-2"></i>
+                            <h3 class="text-lg font-semibold">（爱好名称3）</h3>
+                        </div>
+                        <p class="text-gray-600">（待补充：描述这个爱好的内容、为什么喜欢、带来的收获等）</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 博客文章部分（预留内容区） -->
+        <section id="blog" class="mb-16">
+            <div class="text-center mb-10">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-pink-darker">博客文章</h2>
+                <div class="w-20 h-1 bg-pink-medium mx-auto mt-3 rounded-full"></div>
+                <p class="mt-4 text-gray-600">技术学习、问题解决与生活思考</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 博客文章1（预留） -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-pink/30 flex items-center justify-center">
+                        <!-- 可替换为实际图片 -->
+                        <i class="fa fa-code text-5xl text-pink-dark/70"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fa fa-calendar-o mr-1"></i> （发布日期）
+                            <span class="mx-2">•</span>
+                            <i class="fa fa-tag mr-1"></i> （标签：如前端开发）
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-pink-darker">（文章标题1）</h3>
+                        <p class="text-gray-600 mb-4">（待补充：文章简介，简要说明内容主题和核心观点）</p>
+                        <a href="#" class="inline-flex items-center text-pink-dark font-medium hover:text-pink-darker transition-colors">
+                            阅读全文 <i class="fa fa-long-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 博客文章2（预留） -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-pink/30 flex items-center justify-center">
+                        <!-- 可替换为实际图片 -->
+                        <i class="fa fa-coffee text-5xl text-pink-dark/70"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fa fa-calendar-o mr-1"></i> （发布日期）
+                            <span class="mx-2">•</span>
+                            <i class="fa fa-tag mr-1"></i> （标签：如生活思考）
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-pink-darker">（文章标题2）</h3>
+                        <p class="text-gray-600 mb-4">（待补充：文章简介，简要说明内容主题和核心观点）</p>
+                        <a href="#" class="inline-flex items-center text-pink-dark font-medium hover:text-pink-darker transition-colors">
+                            阅读全文 <i class="fa fa-long-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 查看更多按钮 -->
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block border-2 border-pink-dark text-pink-dark px-6 py-3 rounded-full font-medium hover:bg-pink-dark hover:text-white transition-colors">
+                    查看更多文章 <i class="fa fa-angle-double-right ml-1"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 联系方式部分（预留内容区） -->
+        <section id="contact" class="mb-16">
+            <div class="text-center mb-10">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-pink-darker">联系我</h2>
+                <div class="w-20 h-1 bg-pink-medium mx-auto mt-3 rounded-full"></div>
+                <p class="mt-4 text-gray-600">欢迎交流学习心得，分享生活趣事</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 max-w-2xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- 联系信息 -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-pink-darker mb-4">联系方式</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-pink-light flex items-center justify-center text-pink-darker mr-3">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <span>（待补充：邮箱地址）</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-pink-light flex items-center justify-center text-pink-darker mr-3">
+                                    <i class="fa fa-github"></i>
+                                </div>
+                                <a href="https://github.com/Sarah-likings/Sarah-likings.github.io" target="_blank" class="text-pink-dark hover:underline">GitHub仓库</a>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-pink-light flex items-center justify-center text-pink-darker mr-3">
+                                    <i class="fa fa-wechat"></i>
+                                </div>
+                                <span>（待补充：微信号）</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 简短留言 -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-pink-darker mb-4">留言板</h3>
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" placeholder="你的名字" class="w-full px-4 py-2 border border-pink/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-medium">
+                            </div>
+                            <div class="mb-3">
+                                <textarea placeholder="想说的话..." rows="3" class="w-full px-4 py-2 border border-pink/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-medium"></textarea>
+                            </div>
+                            <button type="button" class="w-full bg-pink-dark text-white py-2 rounded-lg hover:bg-pink-darker transition-colors">
+                                发送留言
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-pink-darker text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">© 2023 莎拉的博客 | 记录学习与生活</p>
+            <p class="text-sm text-white/80">用热爱记录成长，用文字分享世界</p>
+        </div>
+    </footer>
+
+    <!-- 简单的交互脚本 -->
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2', 'shadow');
+            }
+        });
+
+        // 移动端菜单（暂为静态，可后续完善交互）
+        const menuBtn = document.querySelector('button.md\\:hidden');
+        menuBtn.addEventListener('click', function() {
+            alert('移动端菜单可在此处完善交互逻辑');
+        });
+    </script>
 </body>
 </html>
